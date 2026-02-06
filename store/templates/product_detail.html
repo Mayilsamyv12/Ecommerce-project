@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="row">
+        <!-- Product Images Section -->
+        <div class="col-lg-7">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div id="productCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{{ product.image.url }}" class="d-block w-100"
+                                    style="height: 600px; object-fit: contain; background: #fff;"
+                                    alt="{{ product.name }}">
+                            </div>
+                            {% for img in product.images.all %}
+                            <div class="carousel-item">
+                                <img src="{{ img.image.url }}" class="d-block w-100"
+                                    style="height: 600px; object-fit: contain; background: #fff;"
+                                    alt="{{ product.name }}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% if product.images.all %}
+                        <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"
+                                style="filter: invert(1);"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"
+                                style="filter: invert(1);"></span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center overflow-auto pb-2 thumbnails-container">
+                    <img src="{{ product.image.url }}" class="img-thumbnail mr-2 active-thumb luxe-thumb"
+                        style="width: 70px; height: 90px; object-fit: cover; cursor: pointer; border-radius: 8px;"
+                        data-target-index="0">
+                    {% for img in product.images.all %}
+                    <img src="{{ img.image.url }}" class="img-thumbnail mr-2 luxe-thumb"
+                        style="width: 70px; height: 90px; object-fit: cover; cursor: pointer; border-radius: 8px;"
+                        data-target-index="{{ forloop.counter }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Info Section -->
+        <div class="col-lg-5 pl-lg-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 mb-4">
+                    <li class="breadcrumb-item"><a href="/" class="text-muted">Home</a></li>
+                    <li class="breadcrumb-item active" style="color: var(--primary)">{{ product.category.name }}</li>
+                </ol>
+            </nav>
+
+            <div class="d-flex align-items-center mb-2">
+                <h1 class="font-weight-700 mb-0 mr-3" style="font-size: 28px; letter-spacing: -0.5px;">
+                    {{ product.name }}
+                </h1>
+                {% if avg_rating %}
+                <span class="badge badge-warning text-white py-1 px-2"
+                    style="font-size: 14px; background-color: var(--accent); color: var(--dark) !important;">
+                    {{ avg_rating|floatformat:1 }} <i class="fas fa-star small"></i>
+                </span>
+                {% endif %}
+            </div>
+            <p class="text-muted mb-4" style="font-size: 18px;">Premium Collection &bull; {{ product.category.name }}
+            </p>
+
+            <div class="price-section mb-4 p-3 rounded" style="background: var(--light-gray);">
+                <div class="d-flex align-items-center">
+                    <h2 class="font-weight-700 mr-3 mb-0" style="font-size: 32px; color: var(--dark);">
+                        {{product.price|currency}}</h2>
+                    <span class="badge badge-success px-2 py-1">BEST PRICE</span>
+                </div>
+                <p class="text-success small font-weight-600 mb-0 mt-2">inclusive of all taxes</p>
+            </div>
+
+            <div class="mb-5">
+                <h6 class="font-weight-700 text-uppercase small mb-3" style="letter-spacing: 1px;">Product Description
+                </h6>
+                <p style="font-size: 15px; color: var(--gray); line-height: 1.8;">{{ product.description }}</p>
+            </div>
+
+            <div class="action-buttons mt-4">
+                {% if product|is_in_cart:request.session.cart %}
+                <div class="d-flex align-items-center mb-4 p-2 border rounded-pill justify-content-between"
+                    style="max-width: 200px; border-color: var(--primary) !important;">
+                    <form action="/#{{product.id}}" method="POST" class="mb-0">
+                        {% csrf_token %}
+                        <input hidden type="text" name='product' value='{{product.id}}'>
+                        <input hidden type="text" name='remove' value='True'>
+                        <button type="submit" class="btn btn-link text-pink p-0"
+                            style="width: 40px; height: 40px; font-size: 20px; text-decoration: none;">-</button>
+                    </form>
+                    <span class="font-weight-700 text-pink"
+                        style="font-size: 16px;">{{product|cart_quantity:request.session.cart}}</span>
+                    <form action="/#{{product.id}}" method="POST" class="mb-0">
+                        {% csrf_token %}
+                        <input hidden type="text" name='product' value='{{product.id}}'>
+                        <button type="submit" class="btn btn-link text-pink p-0"
+                            style="width: 40px; height: 40px; font-size: 20px; text-decoration: none;">+</button>
+                    </form>
+                </div>
+                <a href="/cart" class="btn btn-outline-dark btn-block py-3 font-weight-700 mb-3"
+                    style="font-size: 15px; border-radius: 12px; height: 60px;">
+                    <i class="fas fa-shopping-bag mr-2"></i> GO TO BAG
+                </a>
+                {% else %}
+                <form action="/#{{product.id}}" method="POST" class="w-100">
+                    {% csrf_token %}
+                    <input hidden type="text" name='product' value='{{product.id}}'>
+                    <button type="submit" class="btn btn-myntra-primary py-3 mb-3 shadow-sm btn-block"
+                        style="font-size: 15px; border-radius: 12px; height: 60px;">
+                        <i class="fas fa-cart-plus mr-2"></i> ADD TO BAG
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reviews Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="font-weight-700 mb-4">Ratings & Reviews</h3>
+
+        {% if can_review %}
+        <div class="card mb-5 shadow-sm">
+            <div class="card-body">
+                <h5 class="font-weight-600 mb-3">Write a Review</h5>
+                <form action="{% url 'submit_review' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="product" value="{{ product.id }}">
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating-input">
+                            <label class="mr-3"><input type="radio" name="rating" value="5" checked> <i
+                                    class="fas fa-star text-warning"></i> 5</label>
+                            <label class="mr-3"><input type="radio" name="rating" value="4"> <i
+                                    class="fas fa-star text-warning"></i> 4</label>
+                            <label class="mr-3"><input type="radio" name="rating" value="3"> <i
+                                    class="fas fa-star text-warning"></i> 3</label>
+                            <label class="mr-3"><input type="radio" name="rating" value="2"> <i
+                                    class="fas fa-star text-warning"></i> 2</label>
+                            <label class="mr-3"><input type="radio" name="rating" value="1"> <i
+                                    class="fas fa-star text-warning"></i> 1</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="comment" class="form-control" rows="3"
+                            placeholder="Share your details of your experience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-myntra-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+        {% elif request.session.customer %}
+        <!-- User logged in but cannot review (not delivered or not bought) -->
+        {% else %}
+        <div class="alert alert-light mb-4 border"><a href="/login?return_url=/product/{{product.id}}">Log in</a> to
+            write a review.</div>
+        {% endif %}
+
+        <!-- Reviews List -->
+        <div class="reviews-list">
+            {% for review in reviews %}
+            <div class="media mb-4 p-3 border rounded bg-white">
+                <div class="mr-3 bg-light rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 50px; height: 50px; font-weight: bold; color: var(--primary);">
+                    {{ review.customer.first_name|slice:":1" }}{{ review.customer.last_name|slice:":1" }}
+                </div>
+                <div class="media-body">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mt-0 font-weight-700">
+                            {{ review.customer.first_name }}
+                            {{ review.customer.last_name }}
+                        </h6>
+                        <span class="text-muted small">{{ review.created_at|date:"M d, Y" }}</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge badge-success px-2">{{ review.rating }} <i
+                                class="fas fa-star small"></i></span>
+                    </div>
+                    <p class="mb-0 text-secondary">{{ review.comment }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-muted">No reviews yet. Be the first to review!</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.luxe-thumb').on('click', function () {
+            var index = $(this).data('target-index');
+            $('#productCarousel').carousel(index);
+            $('.luxe-thumb').removeClass('active-thumb');
+            $(this).addClass('active-thumb');
+        });
+    });
+</script>
+
+<style>
+    .text-pink {
+        color: var(--primary);
+    }
+
+    .img-thumbnail {
+        border: 1px solid #eaeaec;
+        transition: var(--transition);
+    }
+
+    .active-thumb {
+        border: 2.5px solid var(--primary) !important;
+        transform: scale(1.05);
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        content: "•";
+        color: #ccc;
+        padding: 0 10px;
+    }
+
+    #productCarousel .carousel-inner {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .carousel-item img {
+        transition: transform 0.8s ease;
+    }
+
+    .carousel-item.active img {
+        transform: scale(1.02);
+    }
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load cart %}
+{% load custom_filter %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    {% if request.GET.success %}
+    <div class="alert alert-success py-3 mb-4 font-weight-700 shadow-sm border-0 d-flex align-items-center" role="alert"
+        style="font-size: 16px; border-radius: 12px; background: #e6fffb; color: #00b894;">
+        <i class="fas fa-check-circle fa-lg mr-3"></i>
+        <div>
+            Order Placed Successfully!
+        </div>
+        <a href="/" class="btn btn-sm btn-outline-success font-weight-700 ml-4" style="border-width: 2px;">SHOP MORE</a>
+        <button type="button" class="close ml-auto" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+
+    <div class="card p-0 border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+        <div class="p-4 border-bottom bg-white">
+            <h5 class="font-weight-700 mb-0" style="letter-spacing: -0.5px;">My Orders</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr style="background: var(--light-gray);">
+                        <th class="p-4 border-0 small font-weight-700 text-muted text-uppercase"
+                            style="letter-spacing: 1px;">Item Details</th>
+                        <th class="p-4 border-0 small font-weight-700 text-muted text-uppercase"
+                            style="letter-spacing: 1px;">Status</th>
+                        <th class="p-4 border-0 small font-weight-700 text-muted text-uppercase text-right"
+                            style="letter-spacing: 1px;">Order Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr class="border-bottom">
+                        <td class="p-4">
+                            <div class="d-flex align-items-center">
+                                <a href="/product/{{order.product.id}}">
+                                    <img style="height: 120px; width: 90px; object-fit: cover; border-radius: 10px;"
+                                        class="mr-4 shadow-sm" src="{{order.product.image.url}}" alt="">
+                                </a>
+                                <div>
+                                    <a href="/product/{{order.product.id}}" style="text-decoration: none;">
+                                        <p class="font-weight-700 mb-1 text-uppercase"
+                                            style="font-size: 14px; color: var(--dark);">{{order.product.name}}</p>
+                                    </a>
+                                    <p class="small mb-1 text-muted"><i class="far fa-calendar-alt mr-1"></i>
+                                        {{order.date|date:"D, d M Y"}}</p>
+                                    <p class="small mb-0 font-weight-600">Qty: {{order.quantity}} &bull;
+                                        {{order.price|currency}}</p>
+                                    {% if order.delivery_status == 'Delivered' %}
+                                    <a href="/product/{{order.product.id}}"
+                                        class="btn btn-sm btn-outline-primary mt-2 px-3"
+                                        style="font-size: 12px; border-radius: 20px;">Rate Product</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4" style="min-width: 300px;">
+                            <div class="tracking-track">
+                                <div
+                                    class="tracking-step {% if order.delivery_status == 'Placed' or order.delivery_status == 'Shipped' or order.delivery_status == 'Out For Delivery' or order.delivery_status == 'Delivered' %}active{% endif %}">
+                                    <div class="step-dot"></div>
+                                    <div class="step-label">Placed</div>
+                                </div>
+                                <div
+                                    class="tracking-step {% if order.delivery_status == 'Shipped' or order.delivery_status == 'Out For Delivery' or order.delivery_status == 'Delivered' %}active{% endif %}">
+                                    <div class="step-dot"></div>
+                                    <div class="step-label">Shipped</div>
+                                </div>
+                                <div
+                                    class="tracking-step {% if order.delivery_status == 'Out For Delivery' or order.delivery_status == 'Delivered' %}active{% endif %}">
+                                    <div class="step-dot"></div>
+                                    <div class="step-label">Out For Delivery</div>
+                                </div>
+                                <div
+                                    class="tracking-step {% if order.delivery_status == 'Delivered' %}active{% endif %}">
+                                    <div class="step-dot"></div>
+                                    <div class="step-label">Delivered</div>
+                                </div>
+                                <div class="progress-line-container">
+                                    <div class="progress-line"
+                                        style="width: {% if order.delivery_status == 'Placed' %}0%{% elif order.delivery_status == 'Shipped' %}33%{% elif order.delivery_status == 'Out For Delivery' %}66%{% elif order.delivery_status == 'Delivered' %}100%{% endif %};">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 text-right">
+                            <span class="font-weight-700"
+                                style="font-size: 16px; color: var(--dark);">{{order.quantity|multiply:order.price|currency}}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% if not orders %}
+        <div class="text-center py-5 bg-white">
+            <div class="mb-4">
+                <i class="fas fa-shopping-bag fa-4x" style="color: var(--light-gray);"></i>
+            </div>
+            <h5 class="font-weight-700">No Orders Yet</h5>
+            <p class="text-muted small px-5">It looks like you haven't placed any orders yet. <br>Discover our latest
+                collection and start shopping!</p>
+            <a href="/" class="btn-myntra-primary px-5 py-3 d-inline-block mt-3"
+                style="width: auto; border-radius: 10px;">SHOP NOW</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .tracking-track {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .tracking-step {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+    }
+
+    .step-dot {
+        width: 12px;
+        height: 12px;
+        background: #e9ecef;
+        border-radius: 50%;
+        margin: 0 auto 8px;
+        transition: all 0.3s;
+    }
+
+    .tracking-step.active .step-dot {
+        background: #00b894;
+        box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.2);
+    }
+
+    .step-label {
+        font-size: 10px;
+        color: #adb5bd;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .tracking-step.active .step-label {
+        color: var(--dark);
+    }
+
+    .progress-line-container {
+        position: absolute;
+        top: 15px;
+        left: 5%;
+        width: 90%;
+        height: 2px;
+        background: #e9ecef;
+        z-index: 1;
+    }
+
+    .progress-line {
+        height: 100%;
+        background: #00b894;
+        transition: width 0.3s ease;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+</style>
+
+{% endblock %}

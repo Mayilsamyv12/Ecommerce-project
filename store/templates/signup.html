@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container py-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card border shadow-none p-0 overflow-hidden">
+
+                <div class="p-4">
+                    <div class="text-center mb-4">
+                        <h5 class="font-weight-700">Signup <span class="text-muted small">or</span> Login</h5>
+                    </div>
+
+                    <form action="/signup" method="POST">
+                        {% csrf_token %}
+
+                        {% if error %}
+                        <div class="alert alert-danger py-2 small" role="alert">
+                            {{error}}
+                        </div>
+                        {% endif %}
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-4">
+                                    <input type="text" name="firstname" value="{{values.first_name}}"
+                                        class="form-control rounded-0" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-4">
+                                    <input type="text" name="lastname" value="{{values.last_name}}"
+                                        class="form-control rounded-0" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <input type="text" name="phone" value="{{values.phone}}" class="form-control rounded-0"
+                                placeholder="Mobile Number">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <input required type="email" name="email" value="{{values.email}}"
+                                class="form-control rounded-0" placeholder="Email Address">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <input type="password" name="password" class="form-control rounded-0"
+                                placeholder="Password">
+                        </div>
+
+                        <p class="small text-muted mb-4">
+                            By continuing, I agree to the <a href="{% url 'terms' %}"
+                                class="text-pink font-weight-700">Terms of Use</a>
+                            & <a href="{% url 'privacy' %}" class="text-pink font-weight-700">Privacy Policy</a>
+                        </p>
+
+                        <button type="submit" class="btn-myntra-primary py-3 mb-4">CREATE ACCOUNT</button>
+
+                        <p class="small text-muted text-center">
+                            Already have an account? <a href="{% url 'login' %}"
+                                class="text-pink font-weight-700">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-pink {
+        color: var(--primary);
+    }
+
+    .form-control:focus {
+        border-color: #d4d5d9;
+        box-shadow: none;
+    }
+</style>
+
+
+{% endblock %}

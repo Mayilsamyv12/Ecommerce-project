@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+<!-- body -->
+<div class="container-fluid p-0 mb-5">
+	{% if not request.GET.category %}
+	<div id="luxeHeroCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+		<ol class="carousel-indicators">
+			<li data-target="#luxeHeroCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#luxeHeroCarousel" data-slide-to="1"></li>
+			<li data-target="#luxeHeroCarousel" data-slide-to="2"></li>
+			<li data-target="#luxeHeroCarousel" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner" style="background: #ffffff;">
+			<div class="carousel-item active">
+				<a href="/store?category=1" style="text-decoration: none; display: block; height: 100%;">
+					<img class="d-block w-100 hover-zoom"
+						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
+						alt="Women's Fashion"
+						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
+						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Women's
+							Fashion</h1>
+						<p class="h4 text-accent font-weight-600">MIN. 40% OFF ON NEW ARRIVALS</p>
+						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
+							style="border-width: 2px;">SHOP NOW</span>
+					</div>
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="/store?category=2" style="text-decoration: none; display: block; height: 100%;">
+					<img class="d-block w-100 hover-zoom"
+						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
+						alt="Men's Wear"
+						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+					<div class="carousel-caption d-none d-md-block text-right" style="bottom: 20%; right: 10%;">
+						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Men's Premium
+						</h1>
+						<p class="h4 text-accent font-weight-600">FLAT 50% OFF | UPGRADE YOUR STYLE</p>
+						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
+							style="border-width: 2px;">EXPLORE</span>
+					</div>
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="/store?category=3" style="text-decoration: none; display: block; height: 100%;">
+					<img class="d-block w-100 hover-zoom"
+						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
+						alt="Kids Collection"
+						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+					<div class="carousel-caption d-none d-md-block text-center">
+						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Kids
+							Collection</h1>
+						<p class="h4 text-accent font-weight-600">FLAT 30% OFF FOR LITTLE ONES</p>
+						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
+							style="border-width: 2px;">VIEW MORE</span>
+					</div>
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="/store" style="text-decoration: none; display: block; height: 100%;">
+					<img class="d-block w-100 hover-zoom"
+						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
+						alt="Season Sale"
+						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
+						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Season Sale
+						</h1>
+						<p class="h4 text-accent font-weight-600">END OF SEASON | UP TO 70% OFF</p>
+						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
+							style="border-width: 2px;">GRAB DEAL</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#luxeHeroCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#luxeHeroCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	{% endif %}
+</div>
+
+<style>
+	.hover-zoom {
+		transition: transform 0.8s ease;
+	}
+
+	.carousel-item:hover .hover-zoom {
+		transform: scale(1.03);
+	}
+
+	.carousel-caption {
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	.btn-outline-light:hover {
+		background-color: #fff;
+		color: #000;
+	}
+
+	.text-accent {
+		color: var(--accent);
+	}
+</style>
+
+<div class="container-fluid container-layout mt-4">
+	<div class="row">
+		<!-- all products -->
+		<div id='products' class="col-12">
+			{% if products_by_category %}
+			{% for category, products in products_by_category %}
+			<div class="category-section mb-5">
+				<div class="d-flex justify-content-between align-items-center mb-4">
+					<h2 class="font-weight-bold text-uppercase" style="letter-spacing: 1px;">{{ category.name }}</h2>
+					<a href="/store?category={{ category.id }}"
+						class="btn btn-outline-dark btn-sm rounded-pill px-4">View All</a>
+				</div>
+				<div class="row">
+					{% for product in products|slice:":4" %}
+					<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id={{product.id}}>
+						<div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
+							<a href="{% url 'product_detail' product.id %}" class="overflow-hidden d-block"
+								style="height: 300px;">
+								<img class="card-img-top h-100" src="{{product.image.url}}" alt="{{product.name}}"
+									style="object-fit: contain;">
+							</a>
+							<div class="card-body d-flex flex-column p-3">
+								<p class="card-title text-uppercase font-weight-bold mb-1 text-dark"
+									style="font-size: 0.9rem;">{{product.name}}</p>
+								<p class="card-text description-truncate text-muted small mb-2">{{product.description}}
+								</p>
+								<div class="mt-auto">
+									<div class="d-flex align-items-center mb-3">
+										<span
+											class="price-text font-weight-bold text-dark">{{product.price|currency}}</span>
+									</div>
+
+									{% if product|is_in_cart:request.session.cart %}
+									<div class="d-flex align-items-center justify-content-between p-1 border rounded-pill mb-0"
+										style="border-color: var(--primary) !important;">
+										<form action="/#{{product.id}}" method="post" class="mb-0">
+											{% csrf_token %}
+											<input hidden type="text" name='product' value='{{product.id}}'>
+											<input hidden type="text" name='remove' value='True'>
+											<button type="submit" class="btn btn-sm text-pink font-weight-700"
+												style="width: 30px;">-</button>
+										</form>
+										<span
+											class="small font-weight-700 text-pink">{{product|cart_quantity:request.session.cart}}</span>
+										<form action="/#{{product.id}}" method="post" class="mb-0">
+											{% csrf_token %}
+											<input hidden type="text" name='product' value='{{product.id}}'>
+											<button type="submit" class="btn btn-sm text-pink font-weight-700"
+												style="width: 30px;">+</button>
+										</form>
+									</div>
+									{% else %}
+									<form action="/#{{product.id}}" method="POST" class="mb-0">
+										{% csrf_token %}
+										<input hidden type="text" name='product' value='{{product.id}}'>
+										<button type="submit" class="btn-myntra-primary py-2 w-100 shadow-sm"
+											style="font-size: 12px; border-radius: 50px;">ADD TO BAG</button>
+									</form>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			{% endfor %}
+			{% else %}
+			<div class="row">
+				{% for product in products %}
+				<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id={{product.id}}>
+					<div class="card h-100">
+						<a href="{% url 'product_detail' product.id %}" class="overflow-hidden">
+							<img class="card-img-top" src="{{product.image.url}}" alt="{{product.name}}">
+						</a>
+						<div class="card-body d-flex flex-column">
+							<p class="card-title text-uppercase">{{product.name}}</p>
+							<p class="card-text description-truncate text-muted">{{product.description}}</p>
+							<div class="mt-auto">
+								<div class="d-flex align-items-center mb-3">
+									<span class="price-text">{{product.price|currency}}</span>
+								</div>
+
+								{% if product|is_in_cart:request.session.cart %}
+								<div class="d-flex align-items-center justify-content-between p-1 border rounded-pill mb-0"
+									style="border-color: var(--primary) !important;">
+									<form action="/#{{product.id}}" method="post" class="mb-0">
+										{% csrf_token %}
+										<input hidden type="text" name='product' value='{{product.id}}'>
+										<input hidden type="text" name='remove' value='True'>
+										<button type="submit" class="btn btn-sm text-pink font-weight-700"
+											style="width: 30px;">-</button>
+									</form>
+									<span
+										class="small font-weight-700 text-pink">{{product|cart_quantity:request.session.cart}}</span>
+									<form action="/#{{product.id}}" method="post" class="mb-0">
+										{% csrf_token %}
+										<input hidden type="text" name='product' value='{{product.id}}'>
+										<button type="submit" class="btn btn-sm text-pink font-weight-700"
+											style="width: 30px;">+</button>
+									</form>
+								</div>
+								{% else %}
+								<form action="/#{{product.id}}" method="POST" class="mb-0">
+									{% csrf_token %}
+									<input hidden type="text" name='product' value='{{product.id}}'>
+									<button type="submit" class="btn-myntra-primary py-2"
+										style="font-size: 12px; border-radius: 50px;">ADD TO BAG</button>
+								</form>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+<style>
+	.filter-item-luxe {
+		color: var(--dark);
+		padding: 10px 0;
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: none !important;
+		transition: var(--transition);
+		border-bottom: 1px solid transparent;
+	}
+
+	.filter-item-luxe:hover {
+		color: var(--primary);
+		padding-left: 5px;
+	}
+
+	.filter-item-luxe.active {
+		color: var(--primary);
+		font-weight: 700;
+	}
+
+	.hover-shadow:hover {
+		box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+		transform: translateY(-2px);
+	}
+
+	.transition-all {
+		transition: all 0.3s ease;
+	}
+
+	.x-small {
+		font-size: 11px;
+	}
+</style>
+
+{% endblock %}

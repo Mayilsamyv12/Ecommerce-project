@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container py-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <div class="card border shadow-none p-0 overflow-hidden">
+
+                <div class="p-4">
+                    <div class="text-center mb-4">
+                        <h5 class="font-weight-700">Login <span class="text-muted small">or</span> Signup</h5>
+                    </div>
+
+                    <form action="/login" method="POST">
+                        {% csrf_token %}
+
+                        {% if error %}
+                        <div class="alert alert-danger py-2 small" role="alert">
+                            {{error}}
+                        </div>
+                        {% endif %}
+
+                        <div class="form-group mb-4">
+                            <input required type="email" name="email" value="{{values.email}}"
+                                class="form-control rounded-0" placeholder="Email Address">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <input type="password" name="password" class="form-control rounded-0"
+                                placeholder="Password">
+                        </div>
+
+                        <p class="small text-muted mb-4">
+                            By continuing, I agree to the <a href="{% url 'terms' %}"
+                                class="text-pink font-weight-700">Terms of Use</a>
+                            & <a href="{% url 'privacy' %}" class="text-pink font-weight-700">Privacy Policy</a>
+                        </p>
+
+                        <button type="submit" class="btn-myntra-primary py-3 mb-4">CONTINUE</button>
+
+                        <div class="text-center mb-3">
+                            <p class="small text-muted">New to Luxe? <a href="{% url 'signup' %}"
+                                    class="text-pink font-weight-700">Create an account</a></p>
+                        </div>
+
+                        <p class="small text-muted text-center">
+                            Have trouble logging in? <a href="{% url 'contact' %}" class="text-pink font-weight-700">Get
+                                help</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-pink {
+        color: var(--primary);
+    }
+
+    .form-control:focus {
+        border-color: #d4d5d9;
+        box-shadow: none;
+    }
+</style>
+
+
+{% endblock %}

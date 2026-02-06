@@ -1,0 +1,19 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin_analysis.css' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/luxe_logo.png' %}" style="width: 100px; height: auto; vertical-align: middle;"
+            alt="Luxe">
+        <span
+            style="color: #fff; font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 24px; vertical-align: middle; margin-left: 10px;">ADMIN</span>
+    </a>
+</h1>
+{% endblock %}
