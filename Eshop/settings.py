@@ -80,6 +80,12 @@ WSGI_APPLICATION = 'Eshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -90,6 +96,14 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+# Vercel / Production Fallback
+import os
+if os.environ.get('VERCEL') or os.environ.get('CI'):
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 
 
 # Password validation
