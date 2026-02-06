@@ -26,9 +26,13 @@ if os.environ.get('VERCEL'):
         print("Migrations completed.")
         
         # Load initial data if available
-        if os.path.exists('initial_data.json'):
-            print("Loading initial data...")
-            call_command('loaddata', 'initial_data.json')
+        from django.conf import settings
+        init_data_path = os.path.join(settings.BASE_DIR, 'initial_data.json')
+        if os.path.exists(init_data_path):
+            print(f"Loading initial data from {init_data_path}...")
+            call_command('loaddata', init_data_path)
             print("Initial data loaded.")
+        else:
+            print(f"Initial data not found at {init_data_path}")
     except Exception as e:
         print(f"Migration/Data load failed: {e}")
