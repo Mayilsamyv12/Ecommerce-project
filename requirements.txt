@@ -4,3 +4,4 @@ Pillow
 whitenoise
 gunicorn
 cryptography
+dj-database-url
