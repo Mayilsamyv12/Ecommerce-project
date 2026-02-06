@@ -16,11 +16,11 @@
 				<p class="small font-weight-700 text-muted text-uppercase mb-3" style="letter-spacing: 0.5px;">
 					Categories</p>
 				<div class="mb-4 d-flex flex-column">
-					<a href="/store" class="filter-item-luxe">
+					<a href="{% url 'store' %}" class="filter-item-luxe">
 						<i class="fas fa-th-large mr-2"></i> All Products
 					</a>
 					{% for category in categories %}
-					<a href="/store?category={{category.id}}" class="filter-item-luxe">
+					<a href="{% url 'store' %}?category={{category.id}}" class="filter-item-luxe">
 						<i class="fas fa-chevron-right mr-2 small"></i> {{category.name}}
 					</a>
 					{% endfor %}
@@ -99,7 +99,7 @@
 					<h4 class="font-weight-700">No results found</h4>
 					<p class="text-muted mb-4">We couldn't find anything matching your search. Try different keywords or
 						check spelling.</p>
-					<a href="/" class="btn-myntra-primary d-inline-block px-5 py-3"
+					<a href="{% url 'homepage' %}" class="btn-myntra-primary d-inline-block px-5 py-3"
 						style="width:auto; border-radius: 50px;">CONTINUE SHOPPING</a>
 				</div>
 				{% endif %}

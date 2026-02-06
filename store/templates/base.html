@@ -327,7 +327,7 @@
   {% load custom_filter %}
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid container-layout">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="{% url 'homepage' %}">
         <img src="{% static 'images/luxe_logo.png' %}" style="width: 120px; height: auto;" alt="Luxe">
       </a>
 
@@ -342,10 +342,10 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ml-lg-4">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/store?category=2">Men's</a></li>
-          <li class="nav-item"><a class="nav-link" href="/store?category=1">Women's</a></li>
-          <li class="nav-item"><a class="nav-link" href="/store?category=3">Kids</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'store' %}?category=2">Men's</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'store' %}?category=1">Women's</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'store' %}?category=3">Kids</a></li>
 
           <!-- MORE Dropdown -->
           <li class="nav-item dropdown">
@@ -356,19 +356,19 @@
             <div class="dropdown-menu border-0 shadow-lg mt-3" aria-labelledby="navbarDropdown"
               style="border-radius: 12px; min-width: 200px;">
               {% get_categories as categories %}
-              <a class="dropdown-item py-2 small font-weight-600" href="/store"><i class="fas fa-th mr-2"></i> All
+              <a class="dropdown-item py-2 small font-weight-600" href="{% url 'store' %}"><i class="fas fa-th mr-2"></i> All
                 Products</a>
               <div class="dropdown-divider"></div>
               {% for category in categories %}
               <a class="dropdown-item py-2 small font-weight-600"
-                href="/store?category={{category.id}}">{{category.name}}</a>
+                href="{% url 'store' %}?category={{category.id}}">{{category.name}}</a>
               {% endfor %}
             </div>
           </li>
         </ul>
 
         <div class="search-container">
-          <form action="/search" method="GET" class="w-100 d-flex align-items-center mb-0">
+          <form action="{% url 'search' %}" method="GET" class="w-100 d-flex align-items-center mb-0">
             <i class="fas fa-search text-muted ml-3" style="font-size: 16px;"></i>
             <input type="text" name="query" class="search-input" placeholder="Search for products, categories..."
               title="Search products">
@@ -390,24 +390,24 @@
                 <p class="mb-0 font-weight-700 small" style="font-size: 16px;">{{request.session.email}}</p>
               </div>
               <div class="p-2">
-                <a class="dropdown-item py-3 px-3 font-weight-700 rounded" href="/profile" style="font-size: 15px;"><i
+                <a class="dropdown-item py-3 px-3 font-weight-700 rounded" href="{% url 'profile' %}" style="font-size: 15px;"><i
                     class="fas fa-cog mr-2"></i> Settings</a>
-                <a class="dropdown-item py-3 px-3 font-weight-700 rounded" href="/orders" style="font-size: 15px;"><i
+                <a class="dropdown-item py-3 px-3 font-weight-700 rounded" href="{% url 'orders' %}" style="font-size: 15px;"><i
                     class="fas fa-history mr-2"></i> Orders</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item py-3 px-3 font-weight-700 rounded text-danger" href="/logout"
+                <a class="dropdown-item py-3 px-3 font-weight-700 rounded text-danger" href="{% url 'logout' %}"
                   style="font-size: 15px;"><i class="fas fa-power-off mr-2"></i> Logout</a>
               </div>
             </div>
           </div>
           {% else %}
-          <a class="nav-icon-item" href="/login">
+          <a class="nav-icon-item" href="{% url 'login' %}">
             <i class="far fa-user"></i>
             <span>Log In</span>
           </a>
           {% endif %}
 
-          <a class="nav-icon-item position-relative" href="/cart">
+          <a class="nav-icon-item position-relative" href="{% url 'cart' %}">
             <i class="fas fa-shopping-bag"></i>
             <span>My Cart</span>
             {% if request.session.cart %}

@@ -16,7 +16,7 @@
 		</ol>
 		<div class="carousel-inner" style="background: #ffffff;">
 			<div class="carousel-item active">
-				<a href="/store?category=1" style="text-decoration: none; display: block; height: 100%;">
+				<a href="{% url 'store' %}?category=1" style="text-decoration: none; display: block; height: 100%;">
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
 						alt="Women's Fashion"
@@ -31,7 +31,7 @@
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="/store?category=2" style="text-decoration: none; display: block; height: 100%;">
+				<a href="{% url 'store' %}?category=2" style="text-decoration: none; display: block; height: 100%;">
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
 						alt="Men's Wear"
@@ -46,7 +46,7 @@
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="/store?category=3" style="text-decoration: none; display: block; height: 100%;">
+				<a href="{% url 'store' %}?category=3" style="text-decoration: none; display: block; height: 100%;">
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
 						alt="Kids Collection"
@@ -61,7 +61,7 @@
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="/store" style="text-decoration: none; display: block; height: 100%;">
+				<a href="{% url 'store' %}" style="text-decoration: none; display: block; height: 100%;">
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
 						alt="Season Sale"
@@ -120,7 +120,7 @@
 			<div class="category-section mb-5">
 				<div class="d-flex justify-content-between align-items-center mb-4">
 					<h2 class="font-weight-bold text-uppercase" style="letter-spacing: 1px;">{{ category.name }}</h2>
-					<a href="/store?category={{ category.id }}"
+					<a href="{% url 'store' %}?category={{ category.id }}"
 						class="btn btn-outline-dark btn-sm rounded-pill px-4">View All</a>
 				</div>
 				<div class="row">

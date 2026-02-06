@@ -1,6 +1,6 @@
 
 # Create your views here.
-from django.shortcuts import render , redirect , HttpResponseRedirect
+from django.shortcuts import render , redirect , HttpResponseRedirect , get_object_or_404
 from django.views import View
 from store.models import Products
 from django.contrib.auth.hashers import check_password
@@ -218,12 +218,9 @@ class OrderView(View):
 
 
     def get(self , request ):
-        try:
-            customer = request.session.get('customer')
-            orders = Order.get_orders_by_customer(customer)
-            return render(request , 'orders.html'  , {'orders' : orders})
-        except Exception as e:
-             return render(request, 'orders.html', {'orders': []})
+        customer = request.session.get('customer')
+        orders = Order.get_orders_by_customer(customer)
+        return render(request , 'orders.html'  , {'orders' : orders})
 
 class Signup (View):
     def get(self, request):
@@ -298,7 +295,7 @@ from django.db.models import Avg
 
 class ProductDetail(View):
     def get(self, request, pk):
-        product = Products.objects.get(id=pk)
+        product = get_object_or_404(Products, id=pk)
         categories = Category.get_all_categories()
         reviews = Feedback.get_reviews_by_product(pk)
         avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
