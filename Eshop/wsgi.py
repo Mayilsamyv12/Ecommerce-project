@@ -24,5 +24,11 @@ if os.environ.get('VERCEL'):
         print("Running migrations for Vercel...")
         call_command('migrate')
         print("Migrations completed.")
+        
+        # Load initial data if available
+        if os.path.exists('initial_data.json'):
+            print("Loading initial data...")
+            call_command('loaddata', 'initial_data.json')
+            print("Initial data loaded.")
     except Exception as e:
-        print(f"Migration failed: {e}")
+        print(f"Migration/Data load failed: {e}")
