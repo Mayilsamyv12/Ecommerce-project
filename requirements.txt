@@ -3,3 +3,4 @@ pymysql
 Pillow
 whitenoise
 gunicorn
+cryptography
