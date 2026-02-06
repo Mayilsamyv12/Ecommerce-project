@@ -16,3 +16,13 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Eshop.settings')
 application = get_wsgi_application()
 
 app = application
+
+# Vercel Migration for SQLite in /tmp
+if os.environ.get('VERCEL'): 
+    try:
+        from django.core.management import call_command
+        print("Running migrations for Vercel...")
+        call_command('migrate')
+        print("Migrations completed.")
+    except Exception as e:
+        print(f"Migration failed: {e}")
