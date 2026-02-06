@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)4f(ep8^8)mnty^b#=e^*^3s8@!s)cjodqm+rep0uu0m$gld-+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # Changed from [] to ['*'] for deployment access
 
 
 # Application definition
@@ -49,6 +49,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+try:
+    import whitenoise
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+except ImportError:
+    pass
 
 ROOT_URLCONF = 'Eshop.urls'
 
@@ -121,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/image/download/'
 MEDIA_ROOT = BASE_DIR
 
