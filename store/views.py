@@ -82,7 +82,8 @@ class PlaceOrder(View):
             request.session['cart'] = {}
             request.session['checkout_data'] = {}
             return render(request, 'order_success.html')
-        except:
+        except Exception as e:
+             print(f"Order Placement Error: {e}")
              return redirect('cart')
     
 class Index(View):
