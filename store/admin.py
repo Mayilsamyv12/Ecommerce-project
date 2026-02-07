@@ -13,7 +13,7 @@ class AdminProduct(admin.ModelAdmin):
         return "-"
     image_tag.short_description = 'Image'
 
-    list_display = ['image_tag', 'name', 'price', 'category', 'description']
+    list_display = ['image_tag', 'name', 'price', 'category', 'deployment_site']
     list_filter = ['category']
     search_fields = ['name', 'description']
     inlines = [ProductImageInline]

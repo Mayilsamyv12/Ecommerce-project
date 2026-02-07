@@ -87,6 +87,16 @@
                 <p style="font-size: 15px; color: var(--gray); line-height: 1.8;">{{ product.description }}</p>
             </div>
 
+            {% if product.deployment_site %}
+            <div class="mb-4">
+                <h6 class="font-weight-700 text-uppercase small mb-2" style="letter-spacing: 1px;">Live Preview</h6>
+                <a href="{{ product.deployment_site }}" target="_blank" class="text-primary font-weight-bold"
+                    style="font-size: 16px; text-decoration: underline;">
+                    View Deployment Site <i class="fas fa-external-link-alt ml-1"></i>
+                </a>
+            </div>
+            {% endif %}
+
             <div class="action-buttons mt-4">
                 {% if product|is_in_cart:request.session.cart %}
                 <div class="d-flex align-items-center mb-4 p-2 border rounded-pill justify-content-between"
