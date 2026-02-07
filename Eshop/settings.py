@@ -105,7 +105,7 @@ import os
 if os.environ.get('VERCEL') or os.environ.get('CI'):
     import dj_database_url
     DATABASES['default'] = dj_database_url.config(
-        default='sqlite:////tmp/db.sqlite3',
+        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
         conn_max_age=600
     )
 

@@ -20,7 +20,8 @@
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
 						alt="Women's Fashion"
-						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
+						alt="Women's Fashion" class="d-block w-100 hover-zoom carousel-img-responsive">
 					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
 						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Women's
 							Fashion</h1>
@@ -35,7 +36,8 @@
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
 						alt="Men's Wear"
-						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
+						alt="Men's Wear" class="d-block w-100 hover-zoom carousel-img-responsive">
 					<div class="carousel-caption d-none d-md-block text-right" style="bottom: 20%; right: 10%;">
 						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Men's Premium
 						</h1>
@@ -50,7 +52,8 @@
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
 						alt="Kids Collection"
-						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
+						alt="Kids Collection" class="d-block w-100 hover-zoom carousel-img-responsive">
 					<div class="carousel-caption d-none d-md-block text-center">
 						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Kids
 							Collection</h1>
@@ -65,7 +68,8 @@
 					<img class="d-block w-100 hover-zoom"
 						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
 						alt="Season Sale"
-						style="height: 50vh; object-fit: cover; object-position: top center; filter: brightness(0.8);">
+						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
+						alt="Season Sale" class="d-block w-100 hover-zoom carousel-img-responsive">
 					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
 						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Season Sale
 						</h1>
@@ -127,8 +131,8 @@
 					{% for product in products|slice:":4" %}
 					<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id={{product.id}}>
 						<div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
-							<a href="{% url 'product_detail' product.id %}" class="overflow-hidden d-block"
-								style="height: 300px;">
+							<a href="{% url 'product_detail' product.id %}"
+								class="overflow-hidden d-block product-card-img-container">
 								<img class="card-img-top h-100" src="{{product.image.url}}" alt="{{product.name}}"
 									style="object-fit: contain;">
 							</a>
