@@ -7,111 +7,166 @@
 <!-- body -->
 <div class="container-fluid p-0 mb-5">
 	{% if not request.GET.category %}
-	<div id="luxeHeroCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
-		<ol class="carousel-indicators">
-			<li data-target="#luxeHeroCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#luxeHeroCarousel" data-slide-to="1"></li>
-			<li data-target="#luxeHeroCarousel" data-slide-to="2"></li>
-			<li data-target="#luxeHeroCarousel" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner" style="background: #ffffff;">
-			<div class="carousel-item active">
-				<a href="{% url 'store' %}?category=1" style="text-decoration: none; display: block; height: 100%;">
-					<img class="d-block w-100 hover-zoom"
-						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
-						alt="Women's Fashion"
-						src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
-						alt="Women's Fashion" class="d-block w-100 hover-zoom carousel-img-responsive">
-					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
-						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Women's
-							Fashion</h1>
-						<p class="h4 text-accent font-weight-600">MIN. 40% OFF ON NEW ARRIVALS</p>
-						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
-							style="border-width: 2px;">SHOP NOW</span>
+	<!-- Hero Grid Section -->
+	<!-- Hero Grid Section - Carousel with Arrows -->
+	<div class="row no-gutters mb-2">
+		<div class="col-12">
+			<div id="heroCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+				<ol class="carousel-indicators">
+					<li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#heroCarousel" data-slide-to="1"></li>
+					<li data-target="#heroCarousel" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<!-- Slide 1: Women's Fashion -->
+					<div class="carousel-item active">
+						<a href="{% url 'store' %}?category=1" class="hero-card">
+							<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&auto=format&q=80"
+								alt="Women's Fashion" class="hero-img">
+							<div class="hero-overlay">
+								<div class="hero-content text-center">
+									<span class="badge badge-light text-uppercase mb-3 px-3 py-2">New Season</span>
+									<h1 class="display-3 font-weight-bold text-white mb-2">WOMEN'S FASHION</h1>
+									<p class="lead text-white-50 mb-4">Discover the latest trends and styles.</p>
+									<span class="btn btn-light rounded-pill px-5 py-3 font-weight-bold text-uppercase"
+										style="letter-spacing: 1px;">Shop Now</span>
+								</div>
+							</div>
+						</a>
 					</div>
+					<!-- Slide 2: Men's Premium -->
+					<div class="carousel-item">
+						<a href="{% url 'store' %}?category=2" class="hero-card">
+							<img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
+								alt="Men's Premium" class="hero-img">
+							<div class="hero-overlay">
+								<div class="hero-content text-center">
+									<span class="badge badge-light text-uppercase mb-3 px-3 py-2">Exclusive</span>
+									<h1 class="display-3 font-weight-bold text-white mb-2">MEN'S PREMIUM</h1>
+									<p class="lead text-white-50 mb-4">Refined styles for the modern gentleman.</p>
+									<span class="btn btn-light rounded-pill px-5 py-3 font-weight-bold text-uppercase"
+										style="letter-spacing: 1px;">Explore</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<!-- Slide 3: Kids Collection -->
+					<div class="carousel-item">
+						<a href="{% url 'store' %}?category=3" class="hero-card">
+							<img src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
+								alt="Kids Collection" class="hero-img">
+							<div class="hero-overlay">
+								<div class="hero-content text-center">
+									<span class="badge badge-light text-uppercase mb-3 px-3 py-2">Fun & Playful</span>
+									<h1 class="display-3 font-weight-bold text-white mb-2">KIDS COLLECTION</h1>
+									<p class="lead text-white-50 mb-4">Comfortable and stylish outfits for little ones.
+									</p>
+									<span class="btn btn-light rounded-pill px-5 py-3 font-weight-bold text-uppercase"
+										style="letter-spacing: 1px;">View More</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- Carousel Controls (Arrows) -->
+				<a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
 				</a>
-			</div>
-			<div class="carousel-item">
-				<a href="{% url 'store' %}?category=2" style="text-decoration: none; display: block; height: 100%;">
-					<img class="d-block w-100 hover-zoom"
-						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
-						alt="Men's Wear"
-						src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=1600&auto=format&q=80"
-						alt="Men's Wear" class="d-block w-100 hover-zoom carousel-img-responsive">
-					<div class="carousel-caption d-none d-md-block text-right" style="bottom: 20%; right: 10%;">
-						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Men's Premium
-						</h1>
-						<p class="h4 text-accent font-weight-600">FLAT 50% OFF | UPGRADE YOUR STYLE</p>
-						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
-							style="border-width: 2px;">EXPLORE</span>
-					</div>
-				</a>
-			</div>
-			<div class="carousel-item">
-				<a href="{% url 'store' %}?category=3" style="text-decoration: none; display: block; height: 100%;">
-					<img class="d-block w-100 hover-zoom"
-						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
-						alt="Kids Collection"
-						src="https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=1600&auto=format&q=80"
-						alt="Kids Collection" class="d-block w-100 hover-zoom carousel-img-responsive">
-					<div class="carousel-caption d-none d-md-block text-center">
-						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Kids
-							Collection</h1>
-						<p class="h4 text-accent font-weight-600">FLAT 30% OFF FOR LITTLE ONES</p>
-						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
-							style="border-width: 2px;">VIEW MORE</span>
-					</div>
-				</a>
-			</div>
-			<div class="carousel-item">
-				<a href="{% url 'store' %}" style="text-decoration: none; display: block; height: 100%;">
-					<img class="d-block w-100 hover-zoom"
-						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
-						alt="Season Sale"
-						src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&auto=format&q=80"
-						alt="Season Sale" class="d-block w-100 hover-zoom carousel-img-responsive">
-					<div class="carousel-caption d-none d-md-block text-left" style="bottom: 20%; left: 10%;">
-						<h1 class="display-3 font-weight-700 text-uppercase" style="letter-spacing: 2px;">Season Sale
-						</h1>
-						<p class="h4 text-accent font-weight-600">END OF SEASON | UP TO 70% OFF</p>
-						<span class="btn btn-outline-light mt-3 px-5 py-3 font-weight-700"
-							style="border-width: 2px;">GRAB DEAL</span>
-					</div>
+				<a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
 				</a>
 			</div>
 		</div>
-		<a class="carousel-control-prev" href="#luxeHeroCarousel" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#luxeHeroCarousel" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
 	</div>
 	{% endif %}
 </div>
 
 <style>
-	.hover-zoom {
-		transition: transform 0.8s ease;
+	.hero-card {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		border-radius: 4px;
+		height: 600px;
+		/* Large impact height */
 	}
 
-	.carousel-item:hover .hover-zoom {
-		transform: scale(1.03);
+	.hero-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 20%;
+		transition: transform 6s ease;
+		/* Slow zoom effect on slide */
 	}
 
-	.carousel-caption {
+	.carousel-item.active .hero-img {
+		transform: scale(1.1);
+	}
+
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 40px;
+	}
+
+	.hero-content {
+		max-width: 800px;
+		z-index: 2;
+	}
+
+	.hero-content .display-3 {
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
-	.btn-outline-light:hover {
-		background-color: #fff;
-		color: #000;
+	.carousel-control-prev,
+	.carousel-control-next {
+		width: 5%;
+		opacity: 0.7;
 	}
 
-	.text-accent {
-		color: var(--accent);
+	.carousel-control-prev:hover,
+	.carousel-control-next:hover {
+		opacity: 1;
+	}
+
+	.carousel-control-prev-icon,
+	.carousel-control-next-icon {
+		width: 30px;
+		height: 30px;
+		background-color: rgba(0, 0, 0, 0.5);
+		/* Dark background for arrows */
+		border-radius: 50%;
+		background-size: 60%;
+		padding: 25px;
+	}
+
+	@media (max-width: 767px) {
+		.hero-card {
+			height: 400px;
+		}
+
+		.display-3 {
+			font-size: 2.5rem;
+		}
+
+		.lead {
+			font-size: 1rem;
+		}
+
+		.hero-content .btn {
+			padding: 10px 30px !important;
+			font-size: 0.9rem;
+		}
 	}
 </style>
 
@@ -124,29 +179,33 @@
 			<div class="category-section mb-5">
 				<div class="d-flex justify-content-between align-items-center mb-4">
 					<h2 class="font-weight-bold text-uppercase" style="letter-spacing: 1px;">{{ category.name }}</h2>
-					<a href="{% url 'store' %}?category={{ category.id }}"
+					<a href="{% url 'store' %}?category={{category.id}}"
 						class="btn btn-outline-dark btn-sm rounded-pill px-4">View All</a>
 				</div>
 				<div class="row">
 					{% for product in products|slice:":4" %}
-					<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id={{product.id}}>
+					{% if product.id %}
+					<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id="product-{{product.id}}">
 						<div class="card h-100 border-0 shadow-sm hover-shadow transition-all">
-							<a href="{% url 'product_detail' product.id %}"
+							<a href="{% url 'product_detail' pk=product.id %}"
 								class="overflow-hidden d-block product-card-img-container">
 								<img class="card-img-top h-100" src="{{product.image.url}}" alt="{{product.name}}"
 									style="object-fit: contain;">
 							</a>
 							<div class="card-body d-flex flex-column p-3">
 								<p class="card-title text-uppercase font-weight-bold mb-1 text-dark"
-									style="font-size: 0.9rem;">{{product.name}}</p>
-								<p class="card-text description-truncate text-muted small mb-2">{{product.description}}
+									style="font-size: 0.9rem;">
+									{{ product.name }}
+								</p>
+								<p class="card-text description-truncate text-muted small mb-2">
+									{{ product.description }}
 								</p>
 								<div class="mt-auto">
 									<div class="d-flex align-items-center mb-3">
-										<span
-											class="price-text font-weight-bold text-dark">{{product.price|currency}}</span>
+										<span class="price-text font-weight-bold text-dark">
+											{{ product.price|currency }}
+										</span>
 									</div>
-
 									{% if product|is_in_cart:request.session.cart %}
 									<div class="d-flex align-items-center justify-content-between p-1 border rounded-pill mb-0"
 										style="border-color: var(--primary) !important;">
@@ -157,8 +216,9 @@
 											<button type="submit" class="btn btn-sm text-pink font-weight-700"
 												style="width: 30px;">-</button>
 										</form>
-										<span
-											class="small font-weight-700 text-pink">{{product|cart_quantity:request.session.cart}}</span>
+										<span class="small font-weight-700 text-pink">
+											{{ product|cart_quantity:request.session.cart }}
+										</span>
 										<form action="/#{{product.id}}" method="post" class="mb-0">
 											{% csrf_token %}
 											<input hidden type="text" name='product' value='{{product.id}}'>
@@ -178,6 +238,7 @@
 							</div>
 						</div>
 					</div>
+					{% endif %}
 					{% endfor %}
 				</div>
 			</div>
@@ -185,19 +246,25 @@
 			{% else %}
 			<div class="row">
 				{% for product in products %}
-				<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id={{product.id}}>
+				{% if product.id %}
+				<div class="col-6 col-md-4 col-lg-3 px-2 mb-4" id="product-{{product.id}}">
 					<div class="card h-100">
-						<a href="{% url 'product_detail' product.id %}" class="overflow-hidden">
+						<a href="{% url 'product_detail' pk=product.id %}" class="overflow-hidden">
 							<img class="card-img-top" src="{{product.image.url}}" alt="{{product.name}}">
 						</a>
 						<div class="card-body d-flex flex-column">
-							<p class="card-title text-uppercase">{{product.name}}</p>
-							<p class="card-text description-truncate text-muted">{{product.description}}</p>
+							<p class="card-title text-uppercase">
+								{{ product.name }}
+							</p>
+							<p class="card-text description-truncate text-muted">
+								{{ product.description }}
+							</p>
 							<div class="mt-auto">
 								<div class="d-flex align-items-center mb-3">
-									<span class="price-text">{{product.price|currency}}</span>
+									<span class="price-text">
+										{{ product.price|currency }}
+									</span>
 								</div>
-
 								{% if product|is_in_cart:request.session.cart %}
 								<div class="d-flex align-items-center justify-content-between p-1 border rounded-pill mb-0"
 									style="border-color: var(--primary) !important;">
@@ -208,8 +275,9 @@
 										<button type="submit" class="btn btn-sm text-pink font-weight-700"
 											style="width: 30px;">-</button>
 									</form>
-									<span
-										class="small font-weight-700 text-pink">{{product|cart_quantity:request.session.cart}}</span>
+									<span class="small font-weight-700 text-pink">
+										{{ product|cart_quantity:request.session.cart }}
+									</span>
 									<form action="/#{{product.id}}" method="post" class="mb-0">
 										{% csrf_token %}
 										<input hidden type="text" name='product' value='{{product.id}}'>
@@ -229,13 +297,13 @@
 						</div>
 					</div>
 				</div>
+				{% endif %}
 				{% endfor %}
 			</div>
 			{% endif %}
 		</div>
 	</div>
 </div>
-
 <style>
 	.filter-item-luxe {
 		color: var(--dark);

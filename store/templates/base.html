@@ -326,10 +326,14 @@
     }
 
     .carousel-img-responsive {
-      height: 50vh;
+      height: 480px;
+      /* Slight increase for better aspect ratio on desktop */
       object-fit: cover;
+      /* Ensures image fills the container width */
       object-position: top center;
+      /* Focus on top part of image (faces/details) */
       filter: brightness(0.8);
+      width: 100%;
     }
 
     @media (max-width: 768px) {
@@ -339,7 +343,7 @@
       }
 
       .carousel-img-responsive {
-        height: 40vh !important;
+        height: 280px !important;
         /* Shorter header on mobile */
       }
 
