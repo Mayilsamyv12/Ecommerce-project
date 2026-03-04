@@ -87,14 +87,22 @@ import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shopping',
-        'USER': 'root',
-        'PASSWORD': 'MYSQL@mayil1',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Original MySQL config
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'shopping',
+#         'USER': 'root',
+#         'PASSWORD': 'MYSQL@mayil1',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 # Vercel / Production Fallback
 if 'DATABASE_URL' in os.environ:
