@@ -82,8 +82,8 @@ try:
 except ImportError:
     pass
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+import os
+import dj_database_url
 
 DATABASES = {
     'default': {
@@ -97,6 +97,8 @@ DATABASES = {
 }
 
 # Vercel / Production Fallback
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
 
 
