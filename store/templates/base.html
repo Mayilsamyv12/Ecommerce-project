@@ -46,10 +46,10 @@
       -webkit-backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: var(--shadow-sm);
-      min-height: 70px;
-      padding: 0;
+      min-height: 80px;
+      padding: 5px;
       transition: var(--transition);
-      z-index: 1030 !important;
+      z-index: 9999 !important;
       /* Force top layer */
     }
 
@@ -96,7 +96,7 @@
 
     @media (min-width: 992px) {
       .nav-link {
-        padding: 20px 20px !important;
+        padding: 30px 20px !important;
       }
 
       .nav-link::after {
@@ -380,7 +380,7 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid container-layout">
       <a class="navbar-brand" href="{% url 'homepage' %}">
-        <img src="{% static 'images/luxe_logo.png' %}" style="height: 55px; width: auto;" alt="Luxe">
+        <img src="{% static 'images/luxe_logo.png' %}" style="width: 120px; height: auto;" alt="Luxe">
       </a>
 
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse"
