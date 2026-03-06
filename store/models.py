@@ -54,13 +54,7 @@ class Products(models.Model):
 
     @staticmethod
     def get_products_by_id(ids):
-        valid_ids = []
-        for id in ids:
-            try:
-                valid_ids.append(int(id))
-            except ValueError:
-                pass
-        return Products.objects.filter(id__in=valid_ids)
+        return Products.objects.filter (id__in=ids)
     @staticmethod
     def get_all_products():
         return Products.objects.all()
