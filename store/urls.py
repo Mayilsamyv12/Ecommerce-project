@@ -26,3 +26,10 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('licence/', licence, name='licence'),
 ]
+
+from django.urls import path
+from .views import create_admin
+
+urlpatterns = [
+    path('create-admin/', create_admin),
+]
