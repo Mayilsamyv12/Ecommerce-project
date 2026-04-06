@@ -1,4 +1,5 @@
 from django import template
+from store.models import Category
 
 register = template.Library()
 
@@ -12,7 +13,6 @@ def currency(number):
 def multiply(number , number1):
     return number * number1
 
-from store.models import Category
 @register.simple_tag
 def get_categories():
     return Category.get_all_categories()

@@ -1,14 +1,9 @@
-
 # Create your views here.
-from django.shortcuts import render , redirect , HttpResponseRedirect , get_object_or_404
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.views import View
-from store.models import Products
-from django.contrib.auth.hashers import check_password
-from store.models import Order
-from django.contrib.auth.hashers import make_password
-from store.models import Customer
-from store.models import Category
-from store.models import Feedback
+from django.db.models import Avg
+from store.models import Products, Order, Customer, Category, Feedback
+from django.contrib.auth.hashers import check_password, make_password
 
 
 
@@ -285,15 +280,6 @@ class Signup (View):
 
         return error_message
 
-from store.models import Category
-from store.models import Feedback
-
-# ... existing imports ...
-
-from django.db.models import Avg
-
-# ... imports ...
-
 class ProductDetail(View):
     def get(self, request, pk):
         product = get_object_or_404(Products, id=pk)
@@ -353,7 +339,6 @@ class Profile(View):
         customer.last_name = postData.get('lastname')
         customer.phone = postData.get('phone')
         
-        customer.save()
         customer.save()
         return render(request, 'profile.html', {'customer': customer, 'success': 'Profile Updated Successfully'})
 

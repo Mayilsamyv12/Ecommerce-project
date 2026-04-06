@@ -41,7 +41,7 @@
                                     </div>
                                     <p class="text-muted small mb-3">Enter your UPI ID correctly. You will receive a
                                         payment request from <strong>msmayil20@oksbi</strong>.</p>
-                                    <form action="/place-order" method="POST" id="upiForm">
+                                    <form action="/place-order/" method="POST" id="upiForm">
                                         {% csrf_token %}
                                         <input type="hidden" name="payment_method" value="UPI">
                                         <div class="form-group">
@@ -77,7 +77,7 @@
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordionPayment">
                                 <div class="card-body p-4 bg-light">
-                                    <form action="/place-order" method="POST">
+                                    <form action="/place-order/" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="payment_method" value="CARD">
                                         <div class="form-group">
@@ -121,7 +121,7 @@
                                 <div class="card-body p-4 bg-light">
                                     <p class="text-muted small mb-3">Pay with cash when your order is delivered to your
                                         doorstep.</p>
-                                    <form action="/place-order" method="POST">
+                                    <form action="/place-order/" method="POST">
                                         {% csrf_token %}
                                         <input type="hidden" name="payment_method" value="COD">
                                         <button type="submit" class="btn-myntra-primary py-3 w-100"

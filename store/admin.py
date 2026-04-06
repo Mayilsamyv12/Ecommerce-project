@@ -55,6 +55,3 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
-
-
-# username = Tanushree, email = tanushree7252@gmail.com, password = 1234
