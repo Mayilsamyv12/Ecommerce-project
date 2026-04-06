@@ -148,4 +148,20 @@ MEDIA_ROOT = BASE_DIR
 # Default primary key field type
 # ---------------------------------------------------------------------------
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ---------------------------------------------------------------------------
+# Create Superuser Without Terminal (Programmatic)
+# ---------------------------------------------------------------------------
+
+if os.environ.get('CREATE_SUPERUSER') == '1':
+    try:
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser('admin', 'admin@gmail.com', 'admin123')
+    except Exception as e:
+        # Avoid crashing during migrations or other early-stage loading
+        pass
