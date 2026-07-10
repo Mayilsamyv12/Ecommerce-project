@@ -1,0 +1,436 @@
+[
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Womens Clothing"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Men Clothing"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Kids Clothing"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Watches"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Shoes & Bags"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Books"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 9,
+  "fields": {
+    "name": "Gifts"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 14,
+  "fields": {
+    "name": "Cream Embroidered Anarkali Ensemble",
+    "price": 999,
+    "category": 3,
+    "description": "Design: A full-length \"Angrakha\" style silhouette with a cross-over V-neckline. The bodice is embellished with delicate gold sequin \"butti\" work.\r\n\r\nFabric & Detail: Crafted from a soft silk-blend fabric that provides a natural sheen. The hemline is finished with a sleek gold Gota Patti border.\r\n\r\nOccasion: Perfect for weddings, religious ceremonies, or formal evening gatherings.\r\n\r\nStyling Tip: Pair with gold jhumkas and a sleek bun to highlight the neckline.",
+    "image": "uploads/products/kids_Hvu1Tp3.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 15,
+  "fields": {
+    "name": "Modern Asymmetric Sherwani Set",
+    "price": 1499,
+    "category": 3,
+    "description": "Design: A contemporary take on ethnic wear featuring a side-buttoned asymmetric jacket. The cream fabric has an intricate laser-cut or embossed geometric pattern.\r\n\r\nFabric & Detail: The jacket is structured for a sharp fit, while the trousers are made from a high-shine tan taffeta silk. Includes a built-in pocket square for a polished look.\r\n\r\nOccasion: Ideal for festive parties or as a \"ring bearer\" outfit at weddings.",
+    "image": "uploads/products/kids1_WaIOVsY.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 16,
+  "fields": {
+    "name": "Traditional Banarasi Pattu Pavadai",
+    "price": 2499,
+    "category": 3,
+    "description": "Design: A classic South Indian two-piece set. The long skirt (Pavadai) features deep box pleats to create volume and a traditional golden zari border.\r\n\r\nFabric & Detail: Made from rich Kanjeevaram-style art silk. The blouse features contrasting puff sleeves with metallic gold brocade work.\r\n\r\nOccasion: Specifically suited for festivals like Diwali, Pongal, or traditional family functions.",
+    "image": "uploads/products/kids2_PWU0P0f.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 17,
+  "fields": {
+    "name": "Floral Embroidered Nehru Jacket Set",
+    "price": 1999,
+    "category": 3,
+    "description": "Design: A sophisticated layered look featuring a knee-length peach kurta and slim-fit churidar. The focal point is the cream Nehru jacket with vivid multi-color floral thread work.\r\n\r\nFabric & Detail: The jacket is made from heavy Matka silk, giving it a premium texture. It features a high mandarin collar and functional metallic buttons.\r\n\r\nOccasion: A versatile choice for daytime events, Mehendi ceremonies, or school cultural days.",
+    "image": "uploads/products/kids3_Vh1FOHs.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 18,
+  "fields": {
+    "name": "Alphabet Print Shift Dress",
+    "price": 999,
+    "category": 3,
+    "description": "Design: A vibrant, retro-inspired shift dress with a comfortable A-line cut. The print features bold, multi-colored typography that is both educational and stylish.\r\n\r\nFabric & Detail: Made from breathable cotton-jersey or scuba fabric for all-day comfort. Features a contrasting white \"Peter Pan\" collar and a statement pussy-bow tie.\r\n\r\nOccasion: Casual birthday parties, playdates, or weekend outings.",
+    "image": "uploads/products/kids4_JBf9eF6.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 19,
+  "fields": {
+    "name": "Urban Geometric Coord Set",
+    "price": 999,
+    "category": 3,
+    "description": "Design: A matching two-piece resort-style set. The shirt features a modern camp collar and short sleeves, while the shorts offer an elasticated waistband for an easy fit.\r\n\r\nFabric & Detail: Lightweight rayon or poplin cotton, ideal for tropical climates. The \"all-over\" micro-print gives it a clean, minimalist aesthetic.\r\n\r\nOccasion: Summer vacations, beach trips, or casual daytime lounging.",
+    "image": "uploads/products/kids5_v5Kno5r.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 20,
+  "fields": {
+    "name": "Sky Blue Ruffle-Trim Maxi",
+    "price": 999,
+    "category": 1,
+    "description": "Design: A romantic, bohemian-inspired silhouette featuring a smocked elastic waist for a flexible fit.\r\n\r\nDetailing: Detailed with tiered ruffles on the skirt and double-layered flutter sleeves that add movement.\r\n\r\nFabric: Crafted from a lightweight, breathable crepe or rayon blend, making it ideal for outdoor summer events or beach vacations.",
+    "image": "uploads/products/women_-_Copy_-_Copy.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 21,
+  "fields": {
+    "name": "Ruby Red Tiered Fit-and-Flare",
+    "price": 899,
+    "category": 1,
+    "description": "Design: A sophisticated \"modest-chic\" dress with a high band collar and a subtle keyhole back.\r\n\r\nDetailing: Features long, slightly voluminous sleeves with buttoned cuffs and a micro-pleated bodice that transitions into a three-tier flared skirt.\r\n\r\nFabric: Made from a soft georgette fabric with a full inner lining to ensure a smooth, opaque finish.",
+    "image": "uploads/products/women1_vK6oG2f.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 22,
+  "fields": {
+    "name": "Fuchsia Garden Party Midi",
+    "price": 1499,
+    "category": 1,
+    "description": "Design: An ethnic-fusion midi dress featuring a vibrant multi-colored botanical print on a deep fuchsia base.\r\n\r\nDetailing: Includes a delicate V-neckline and adjustable drawstring tassels at the waist to accentuate the figure.\r\n\r\nFabric: Typically made from high-quality Liva silk or soft cotton, providing a luxurious drape and cooling effect.",
+    "image": "uploads/products/women2_DQRAdP2.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 23,
+  "fields": {
+    "name": "Urban Pinstripe Jumpsuit",
+    "price": 999,
+    "category": 1,
+    "description": "Design: A tall, sleek silhouette designed with vertical \"power stripes\" to create an elongated look.\r\n\r\nDetailing: Features a sleeveless notched collar bodice (reminiscent of a blazer) and wide-leg trousers for a high-fashion, professional edge.\r\n\r\nFabric: Constructed from a structured linen or cotton-poly blend that holds its shape throughout the day.",
+    "image": "uploads/products/women3_ROENQBb.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 24,
+  "fields": {
+    "name": "Teal Botanical Shirt Dress",
+    "price": 499,
+    "category": 1,
+    "description": "Design: A classic utilitarian shirt dress reimagined with a fresh, organic leaf print.\r\n\r\nDetailing: Features a full-length functional button placket, side slits for ease of movement, and a matching fabric belt to cinch the waist.\r\n\r\nFabric: Pure cotton poplin, which offers a crisp look and maximum comfort for Chennai’s tropical climate.",
+    "image": "uploads/products/women4_DRcoTRG.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 25,
+  "fields": {
+    "name": "Midnight Peplum Co-ord Set",
+    "price": 599,
+    "category": 1,
+    "description": "Design: A contemporary two-piece set featuring a wrap-style tunic and high-waisted cigarette pants.\r\n\r\nDetailing: The top is designed with dramatic \"bishop\" sleeves and a flared peplum hem that balances the proportions of the slim-fit trousers.\r\n\r\nFabric: A rich, dark-toned rayon or satin-finish fabric adorned with a minimalist floral \"butti\" print.",
+    "image": "uploads/products/women5_sRzfgwq.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 26,
+  "fields": {
+    "name": "Columbus Blue Jackets Pullover",
+    "price": 699,
+    "category": 2,
+    "description": "Fabric & Construction: Made from a high-density \"ripstop\" polyester or nylon shell designed to resist wind and light drizzle. The interior often features a breathable mesh lining to prevent overheating during activity.\r\n\r\nKey Details: Features an \"Anorak\" style silhouette with a toggle-adjustable hood. The sleeve features high-impact screen-printed block lettering, and the chest logo is a high-stitch-count embroidery for a premium feel.\r\n\r\nBest For: Brisk morning jogs, outdoor stadium events, or casual fan-wear.",
+    "image": "uploads/products/men_30XWOYD.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 27,
+  "fields": {
+    "name": "Levi’s Olive Corduroy Trucker",
+    "price": 499,
+    "category": 2,
+    "description": "Fabric & Construction: Crafted from \"fine-wale\" corduroy (meaning the ridges are narrow and soft). This material is heavier than a standard shirt, providing a structured look that doesn't wrinkle easily.\r\n\r\nKey Details: Includes signature copper-tone shank buttons and reinforced stitching at the stress points. The olive-drab color is a \"neutral\" in menswear, meaning it pairs easily with denim, tan, or black trousers.\r\n\r\nBest For: Autumn layering or a \"rugged-refined\" weekend look.",
+    "image": "uploads/products/men1_kfultfo.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 28,
+  "fields": {
+    "name": "Jet Black Muscle-Fit Polo",
+    "price": 599,
+    "category": 2,
+    "description": "Fabric & Construction: Typically a blend of Pique cotton and Elastane (Spandex). This allows the shirt to hug the arms and chest while remaining breathable.\r\n\r\nKey Details: Features \"ribbed\" cuffs on the sleeves to prevent sagging and a reinforced collar that stays upright even after multiple washes. The matte black finish gives it a sleek, expensive appearance.\r\n\r\nBest For: Showcasing a literal \"gym-ready\" physique in a business-casual setting.",
+    "image": "uploads/products/men2_oOm4FZm.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 29,
+  "fields": {
+    "name": "Camel Textured Button-Down",
+    "price": 999,
+    "category": 2,
+    "description": "Fabric & Construction: Likely a \"slub\" cotton or linen blend. The \"slub\" refers to the intentional slight lumps in the yarn which create a rich, organic texture that feels very light on the skin.\r\n\r\nKey Details: The shirt has a \"soft-wash\" finish for a broken-in feel. It lacks a chest pocket, which keeps the lines clean and formal enough to be tucked into dress pants.\r\n\r\nBest For: Summer weddings, beach-side dinners, or \"smart-casual\" office days.",
+    "image": "uploads/products/men3_6oQkNnx.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 30,
+  "fields": {
+    "name": "Navy Contrast-Stitch Chore Coat",
+    "price": 1499,
+    "category": 2,
+    "description": "Navy Contrast-Stitch Chore Coat",
+    "image": "uploads/products/men4_M6OzqrI.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 31,
+  "fields": {
+    "name": "Geometric Patterned Party Shirt",
+    "price": 1299,
+    "category": 2,
+    "description": "Fabric & Construction: A smooth, lightweight poplin or rayon. These fabrics are chosen for their \"drape\"—meaning the shirt moves fluidly with the body rather than staying stiff.\r\n\r\nKey Details: The pattern is a \"repeat print\" featuring sharp, high-contrast white graphics. The curved \"shirt-tail\" hem allows it to be worn untucked without looking sloppy.\r\n\r\nBest For: Evening social gatherings, holiday events, or adding a \"pop\" of personality to a plain outfit.",
+    "image": "uploads/products/men5_qdfsZRE.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 32,
+  "fields": {
+    "name": "Daniel Wellington Iconic Link",
+    "price": 999,
+    "category": 4,
+    "description": "Case & Bracelet: Crafted from high-quality 316L polished stainless steel. The bracelet features a classic three-piece link design with a butterfly clasp.\r\n\r\nDial Details: A deep black dial featuring silver-toned \"Twelve Index\" markers (no numbers), giving it a very clean, sophisticated look.\r\n\r\nMovement: Japanese Quartz Movement, known for extreme reliability and low maintenance.\r\n\r\nWater Resistance: Up to 3 ATM (Rain resistant/Splash-proof).\r\n\r\nBest For: Professional meetings, formal events, or anyone who prefers a timeless \"quiet luxury\" aesthetic.",
+    "image": "uploads/products/watch_EUD0qCm.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 33,
+  "fields": {
+    "name": "Sonata Unveil (Sleek Series)",
+    "price": 699,
+    "category": 4,
+    "description": "Unique Feature: The dial has a distinct concentric circle texture that catches the light differently from every angle.\r\n\r\nBuild: Metal case with a matching blue/black ion-plated stainless steel strap.\r\n\r\nMovement: Standard Quartz. It is a slim-profile watch designed not to feel bulky on the wrist.\r\n\r\nWater Resistance: Up to 30 meters.\r\n\r\nBest For: Daily office wear or a dinner date where you want a modern, eye-catching accessory that isn't too expensive.",
+    "image": "uploads/products/watch1_HO79TEv.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 34,
+  "fields": {
+    "name": "Amazfit GTS 4 Mini",
+    "price": 1999,
+    "category": 4,
+    "description": "Display: Stunning 1.65-inch HD AMOLED screen with an Always-On feature. It is very bright and clear even under direct Chennai sunlight.\r\n\r\nHealth Suite: Includes 24-hour Heart Rate monitoring, SpO2 (Blood Oxygen), Stress tracking, and Sleep analysis.\r\n\r\nFitness: Features 120+ Sports Modes and built-in 5-satellite GPS for accurate run/walk tracking without your phone.\r\n\r\nBattery: Impressive life of up to 15 days on a single charge.\r\n\r\nBest For: Fitness enthusiasts and tech-savvy users who want detailed health data and smartphone notifications.",
+    "image": "uploads/products/watch2_39VfVqX.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 35,
+  "fields": {
+    "name": "Hammer Pulse 3.0",
+    "price": 1999,
+    "category": 4,
+    "description": "Display: Large 1.69-inch HD touch screen.\r\n\r\nConnectivity: Supports Bluetooth Calling, allowing you to answer or make calls directly from your wrist using a built-in speaker and mic.\r\n\r\nSpecial Features: Includes \"Meditation Mode\" for breathing exercises, a remote camera shutter, and music control.\r\n\r\nBuild: A durable polycarbonate case with a skin-friendly silicone strap.\r\n\r\nBest For: Students or active individuals who want a \"smart\" look with calling features at an accessible price point.",
+    "image": "uploads/products/watch3_ZP1w8xn.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 36,
+  "fields": {
+    "name": "Fastrack Kronos (Tach Series)",
+    "price": 899,
+    "category": 4,
+    "description": "Dial: Features a \"Tachymeter\" look with three functional (or aesthetic, depending on the specific sub-model) sub-dials for seconds, minutes, and 24-hour time.\r\n\r\nStrap: Genuine tan leather with contrast stitching, which develops a unique character as it ages.\r\n\r\nBuild: Large, bold metal case that feels substantial and \"masculine\" on the wrist.\r\n\r\nWater Resistance: Usually 5 ATM, making it more durable for outdoor adventures.\r\n\r\nBest For: Casual outings, weekend trips, or pairing with denim and a t-shirt.",
+    "image": "uploads/products/watch4_dK87LvO.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 37,
+  "fields": {
+    "name": "The Formal Evening Set",
+    "price": 1499,
+    "category": 5,
+    "description": "The Footwear: These are stiletto-style heeled sandals featuring a slim \"pencil\" heel. The design uses a \"two-strap\" minimalist silhouette—one strap across the toes and a delicate adjustable strap around the ankle for support. The matte black finish makes them a versatile staple for cocktail dresses or tailored trousers.\r\n\r\nThe Handbag: A structured trapeze satchel in a soft nude/blush tone. It features reinforced \"rolled\" top handles and a zippered main compartment. The gold-tone hardware and the hanging \"clochette\" (key hood) give it a high-end, designer aesthetic similar to classic Italian luxury bags.",
+    "image": "uploads/products/shoe_WFMUKh2.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 38,
+  "fields": {
+    "name": "The Textured Noir Collection",
+    "price": 1999,
+    "category": 5,
+    "description": "The Footwear: These are pointed-toe Chelsea boots with a modern twist. Instead of smooth leather, they feature a croc-embossed heat-pressed pattern. The low block heel (approximately 1.5–2 inches) is designed for all-day comfort, while the elastic side gusset allows for easy slip-on wear.\r\n\r\nThe Handbag: A matching crocodile-patterned tote. The scales are large and symmetrical, giving the bag a structured, rigid shape that won't slouch. It’s an ideal \"power accessory\" for a sharp, monochromatic office outfit.",
+    "image": "uploads/products/shoe1_yFhnhDs.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 39,
+  "fields": {
+    "name": "The Heritage Professional Set",
+    "price": 1499,
+    "category": 5,
+    "description": "The Footwear: Classic Oxford Brogues in a rich cognac or chestnut tan. The \"wingtip\" design is defined by the W-shaped perforated pattern on the toe cap. They feature a stacked wooden-effect sole and tonal waxed laces. This style is the gold standard for business formal and \"smart-casual\" weddings.\r\n\r\nThe Packaging: Featured with an Eco Bags India kraft paper tote, emphasizing a move toward sustainable, plastic-free retail packaging for premium leather goods.",
+    "image": "uploads/products/shoe2_S9YUWJZ.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 40,
+  "fields": {
+    "name": "The Contemporary Leisure Set",
+    "price": 1999,
+    "category": 5,
+    "description": "The Footwear: A hybrid between a slip-on loafer and a platform sneaker. The upper is made of breathable, laser-cut perforated leather (or faux leather), which provides ventilation. The \"hidden wedge\" or thick platform sole adds height while maintaining the comfort of a flat shoe.\r\n\r\nThe Accessories: This set includes an oversized cream shopper tote with slim shoulder straps, offering maximum interior space. The white-framed Wayfarer sunglasses tie the \"all-white\" aesthetic together, perfect for resort wear or a high-end brunch look.",
+    "image": "uploads/products/shoe3_3meOCiV.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 41,
+  "fields": {
+    "name": "The Power of Your Subconscious Mind",
+    "price": 999,
+    "category": 6,
+    "description": "By Dr. Joseph Murphy\r\n\r\nThis is a foundational text in the \"New Thought\" movement. It argues that your conscious mind is the \"captain\" of the ship, but your subconscious is the powerful engine that actually moves you.\r\n\r\nThe Core Concept: Your subconscious mind does not argue; it simply accepts what you repeat to it. If you constantly think \"I can't afford this\" or \"I am always unlucky,\" your subconscious will manifest those conditions as your reality.\r\n\r\nPractical Techniques: The book is famous for providing specific \"prayers\" or affirmations for different life situations—healing a physical illness, finding a romantic partner, or achieving financial wealth.\r\n\r\nKey Insight: Dr. Murphy suggests that the best time to influence the subconscious is just before you fall asleep, as the barrier between the conscious and subconscious mind is at its thinnest.",
+    "image": "uploads/products/books_5T3lp0n.webp"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 42,
+  "fields": {
+    "name": "The Girl on the Train",
+    "price": 1499,
+    "category": 6,
+    "description": "By Ruskin Bond\r\n\r\nWhile the title might remind some of the thriller by Paula Hawkins, this specific book is a collection of 12 short stories by Ruskin Bond, one of India's most cherished authors.\r\n\r\nThe Title Story: Originally titled \"The Eyes Have It,\" it tells the story of a blind man traveling by train. He meets a girl and goes to great lengths to hide his blindness from her, only to discover a heartbreakingly ironic twist after she gets off at her station.\r\n\r\nAtmosphere: Bond’s writing is famous for its simplicity and warmth. Most stories are set in the Himalayan foothills (like Mussoorie and Dehra), capturing the quiet beauty of nature and the brief, meaningful encounters between strangers.\r\n\r\nThemes: Loneliness, nostalgia, and the \"fleeting magic\" of human connection. It’s an easy, comforting read for a rainy afternoon.",
+    "image": "uploads/products/books1_nfNQHMf.webp"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 43,
+  "fields": {
+    "name": "A Game of Thrones",
+    "price": 1999,
+    "category": 6,
+    "description": "By George R.R. Martin\r\n\r\nThis is the first book in the A Song of Ice and Fire series. It redefined the fantasy genre by focusing on gritty realism rather than typical \"good vs. evil\" tropes.\r\n\r\nThe Plot: The story begins in the Seven Kingdoms of Westeros. King Robert Baratheon travels north to ask his old friend, Ned Stark, to serve as his \"Hand\" (chief advisor) after the previous one died under suspicious circumstances.\r\n\r\nMulti-Perspective: The book is written through the eyes of several \"POV\" (Point of View) characters, including the honorable Starks, the exiled Daenerys Targaryen, and the clever, cynical Tyrion Lannister.\r\n\r\nWhy It's Different: Unlike many fantasy books, characters you love can die unexpectedly. It explores the dark side of politics, the burden of honor, and the complex \"gray\" morality of human beings.",
+    "image": "uploads/products/books2_EarMOju.webp"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 44,
+  "fields": {
+    "name": "The Alchemist",
+    "price": 1399,
+    "category": 6,
+    "description": "By Paulo Coelho\r\n\r\nOften described as a \"self-help book in the form of a novel,\" this is a philosophical allegory about finding your life's purpose.\r\n\r\nThe Journey: Santiago, a shepherd boy from Spain, has a recurring dream about a treasure hidden at the Egyptian Pyramids. He decides to sell his sheep and travel across the Sahara Desert to find it.\r\n\r\nPersonal Legend: The book introduces the concept of a \"Personal Legend\"—your true mission on Earth. It famously states: \"When you want something, all the universe conspires in helping you to achieve it.\"\r\n\r\nThe Lesson: Along the way, Santiago meets an Alchemist who teaches him that the greatest obstacles aren't physical, but mental (specifically, the fear of failure). The ending provides a classic \"full circle\" revelation about where true treasure actually lies.",
+    "image": "uploads/products/books3_xmKlht1.webp"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 45,
+  "fields": {
+    "name": "Heart-Shaped Couple Night Light",
+    "price": 499,
+    "category": 9,
+    "description": "Add a touch of whimsical romance to any room with this LED Silhouette Heart Lamp. Crafted with a sleek, minimalist pink base, the heart-shaped frame emits a soft, warm white glow that creates a cozy atmosphere. At the center of the heart stands a tiny, detailed figurine of a couple, capturing a quiet moment of affection.\r\n\r\nKey Features: Energy-efficient LED lighting, compact footprint for nightstands, and a durable matte finish.\r\n\r\nIdeal For: Anniversary surprises, bedroom decor, or a \"just because\" gift for a partner.",
+    "image": "uploads/products/gift_82cOmSw.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 46,
+  "fields": {
+    "name": "Personalized Rotating Wooden Calendar",
+    "price": 499,
+    "category": 9,
+    "description": "The Everlasting Memories Perpetual Calendar is a beautiful blend of functionality and sentiment. Unlike paper calendars, this rotating wooden piece never expires. It features three concentric rings to adjust the date, month, and day of the week. The center is customizable with a high-definition photo of your choice, framed by a rich dark-wood grain finish.\r\n\r\nKey Features: Sustainable wood construction, manual rotating dials, and high-quality photo printing.\r\n\r\nIdeal For: Office desks, housewarming gifts, or as a \"save the date\" memento for weddings.",
+    "image": "uploads/products/gift1_Ujf6AqP.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 47,
+  "fields": {
+    "name": "Ultimate \"Sweetest Love\" Gift Hamper",
+    "price": 999,
+    "category": 9,
+    "description": "Why choose one gift when you can give them all? This Curated Romance Gift Basket is designed to delight the senses. It features a premium 10-inch plush teddy bear holding a \"You Are Sweet\" heart, nestled alongside a variety of milk chocolates. The hamper is rounded out with personalized polaroid-style photo prints and a hanging heart charm for an extra layer of customization.\r\n\r\nKey Features: Hand-woven wicker basket, assorted name-brand chocolates, and multi-photo personalization.\r\n\r\nIdeal For: Valentine’s Day, birthdays, or long-distance relationship surprises.",
+    "image": "uploads/products/gift2_tPL6mmY.jpg"
+  }
+},
+{
+  "model": "store.products",
+  "pk": 48,
+  "fields": {
+    "name": "Personalized Photo Mug & Coaster Set",
+    "price": 999,
+    "category": 9,
+    "description": "Turn every sip into a walk down memory lane with our Custom Portrait Coffee Mug. This 11oz ceramic mug features a wrap-around printing process that ensures your photos look vibrant and sharp. Accompanied by matching gloss-finish coasters, this set protects your furniture while showcasing your favorite family moments or travel snapshots.\r\n\r\nKey Features: Dishwasher and microwave safe, ergonomic C-handle, and heat-resistant coasters.\r\n\r\nIdeal For: Mother’s Day, family reunions, or a personalized office mug.",
+    "image": "uploads/products/gift3_P4TBo2t.jpg"
+  }
+}
+]
