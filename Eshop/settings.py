@@ -86,14 +86,10 @@ WSGI_APPLICATION = 'Eshop.wsgi.application'
 
 # ---------------------------------------------------------------------------
 # Database
-# Railway injects DATABASE_URL automatically when you set:
-#   Key:   DATABASE_URL
-#   Value: ${{ MySQL.MYSQL_URL }}
+# Uses DATABASE_URL environment variable on Render (production).
 # Falls back to local MySQL for development.
 # ---------------------------------------------------------------------------
 
-# Use DATABASE_URL environment variable on Render (production).
-# Falls back to local MySQL for development.
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 if DATABASE_URL:
@@ -155,6 +151,4 @@ MEDIA_ROOT = BASE_DIR
 # Default primary key field type
 # ---------------------------------------------------------------------------
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
